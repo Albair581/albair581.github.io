@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --text: #c9d1d9;
+      --accent: #58a6ff;
+      --card: #161b22;
+    }
+
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --text: #0d1117;
+      --accent: #0969da;
+      --card: #f0f0f0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--card);
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+
+    nav {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-left: 2rem;
+    }
+
+    .hero {
+      position: relative;
+      padding: 6rem 2rem;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .hero h2,
+    .hero p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h3 {
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid #30363d;
+      font-size: 0.9rem;
+      color: #8b949e;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      header {
+        flex-wrap: nowrap;
+      }
+
+      nav {
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </nav>
+  </header>
+
+  <div class="hero" data-aos="fade-up">
+    <h2>Hi, I’m Albert 👋</h2>
+    <p>Python enthusiast, Flutter explorer, and passionate about turning ideas into functional, beautiful software experiences.</p>
+  </div>
+
+  <section id="projects">
+    <h2 data-aos="fade-right">🧪 Featured Projects</h2>
+    <div class="grid">
+      <div class="card" data-aos="fade-up">
+        <h3>Food Ninja 2.0</h3>
+        <p>Modern UI for tracking food waste. Modular layout with record, compost, and donate sections.</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Currency Converter</h3>
+        <p>Python web scraping tool to fetch and convert real-time currency rates from official bank sources.</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Microbit Area Calculator</h3>
+        <p>Extension for Microbit that helps students calculate area in fun and interactive ways.</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <h3>AreaCalc on PyPI</h3>
+        <p>Modules to calculate areas, volumes, sizes, borders, and surface areas for a variety of shapes.</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="400">
+        <h3>CLI Beautifier</h3>
+        <p>PyPI packages using <code>rich</code> and <code>colorama</code> to bring style and clarity to the terminal.</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="500">
+        <h3>Terminal Tools</h3>
+        <p>Progress bars, logs, loops, and more—your terminal has never looked this good.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 data-aos="fade-left">🛠️ Tech Stack</h2>
+    <div class="card" data-aos="zoom-in">
+      <p><strong>Languages:</strong> Python (❤️), HTML5 (💪), Dart, JavaScript, Swift (😤 but useful), learning Rust</p>
+      <p><strong>Frontend:</strong> Flutter, PWA, Vanilla JS, jQuery</p>
+      <p><strong>Backend:</strong> Local translation with NLLB, static file handling, web scraping</p>
+      <p><strong>Tools:</strong> GitHub Pages, EmailJS, Nuitka, ONNX, BeautifulSoup, PyPI</p>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2 data-aos="fade-right">📝 Latest Blog</h2>
+    <div class="card" data-aos="fade-up">
+      <h3>Behind the Scenes: Food Ninja 2.0</h3>
+      <p>A design overhaul, modular UI, and new composting features. Here's what I’ve learned building a food waste tracker app.</p>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <h3>Breaking Language Barriers</h3>
+      <p>Creating a low-cost, multilingual translation tool for real business needs—powered by NLLB and optimized for speed.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 data-aos="fade-up">📬 Get In Touch</h2>
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <p>Feel free to connect if you’re into smart apps, language tech, or creative solutions. I don't bite—unless you’re a memory leak. 😄</p>
+      <p>Email: <a href="mailto:albertoyucheng@gmail.com" style="color: var(--accent)">albertoyucheng@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/Albair581/" target="_blank" style="color: var(--accent)">Albair581</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Albert. Inspired by GitHub’s dark elegance.</p>
+    <p>
+      <a href="mailto:albertoyucheng@gmail.com">Email</a> ·
+      <a href="https://github.com/Albair581" target="_blank">GitHub</a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 1000
+    });
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      if (current === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    }
+  </script>
+</body>
+</html>
